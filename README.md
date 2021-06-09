@@ -5,7 +5,7 @@
  **Objetivos do sistema:** 
  - Cadastrar alunos e professores.
 
- -Informações de alunos:
+ - Informações de alunos:
    - Mostrar a situação do aluno (regular/irregular) de acordo a regularidade do pagamento das mensalidades.
    - Mostrar o total da dívida do aluno.
 
