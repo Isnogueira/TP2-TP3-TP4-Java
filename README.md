@@ -1,4 +1,4 @@
-> Teste de perfermance restantes da disciplina Fundamentos de desenvolvimento Java.
+> Testes de perfermance restantes da disciplina Fundamentos de desenvolvimento Java.
  
  ### Sistema acadêmico simples Orientado a Objetos 
  
