@@ -31,8 +31,8 @@ public class Menu {
             System.out.println("==================");
             System.out.println("[1] Registrar Aluno");
             System.out.println("[2] Registrar Professor");
-            System.out.println("[3] Consultar situação de um docente/discente");
-            System.out.println("[4] Consultar Todos cadastrados");
+            System.out.println("[3] Listar todos os cadastrados");
+            System.out.println("[4] Consultar situação de um docente/discente");
             System.out.println("[5] Sair");
 
             System.out.println("Informe a opçao desejada: ");
@@ -61,10 +61,6 @@ public class Menu {
                             aluno.setMesesInadimplencia(ler().nextInt());
                             
                             pessoas[index] = aluno;
-                            
-                            System.out.println("=====================================");
-                            pessoas[index].imprimir();
-                            System.out.println("=====================================");
                             
                             System.out.println("Aluno cadastrado com sucesso!");
                             
@@ -102,10 +98,6 @@ public class Menu {
                             
                             pessoas[index] = professor;
                             
-                            System.out.println("=====================================");
-                            pessoas[index].imprimir();
-                            System.out.println("=====================================");
-                            
                             System.out.println("Professor cadastrado com sucesso!");
                             
                             index++;
@@ -119,22 +111,22 @@ public class Menu {
                     
                     case "3" : {
                         
+                        imprimirCadastrados();
+                    }
+                    break;
+                    
+                    case "4" : {
+                        
                         System.out.println("Informe a posição do aluno/professor:");
                         int idx = ler().nextInt();
                         
                         if (idx >= 0 && idx < index){
                             
-                            pessoas[idx].imprimir();                     
+                            pessoas[idx].imprimir();
                         }
                         else{
                             System.out.println("Posição inválida");
                         }
-                    }
-                    break;
-                    
-                     case "4" : {
-                       
-                        imprimirCadastrados();
                     }
                     break;
                     
@@ -155,8 +147,8 @@ public class Menu {
         System.out.println("=====================");
         for (int i = 0; i < index; i++) {
             
-            pessoas[i].imprimir();
-            System.out.println("============================");
+            System.out.println(i + " - " + pessoas[i].getNome());
+            
         }
     }
 }

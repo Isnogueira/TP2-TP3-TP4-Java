@@ -1,5 +1,5 @@
 
-package sistemaEscolar.domain;
+package br.edu.infnet.tp2javasistemaescolar.domain;
 
 /**
  *
