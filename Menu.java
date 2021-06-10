@@ -2,8 +2,9 @@
 package br.edu.infnet.tp2javasistemaescolar;
 
 import java.util.Scanner;
-import sistemaEscolar.domain.*;
-import sistemaEscolar.auxiliar.Constante;
+import br.edu.infnet.tp2javasistemaescolar.domain.*;
+import br.edu.infnet.tp2javasistemaescolar.auxiliar.Constante;
+
 /**
  *
  * @author IngridNogueira

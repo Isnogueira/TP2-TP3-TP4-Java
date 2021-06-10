@@ -1,8 +1,7 @@
 
-package sistemaEscolar.domain;
+package br.edu.infnet.tp2javasistemaescolar.domain;
 
-import sistemaEscolar.auxiliar.Constante;
-
+import br.edu.infnet.tp2javasistemaescolar.auxiliar.Constante;
 /**
  *
  * @author IngridNogueira
