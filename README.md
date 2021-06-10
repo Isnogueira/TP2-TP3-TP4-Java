@@ -1,11 +1,11 @@
-> Teste de perfermance restantes da disciplina Fundamentos de desenvolvimento Java.
+> Testes de perfermance restantes da disciplina Fundamentos de desenvolvimento Java.
  
- Sistema acadêmico simples Orientado a Objetos 
+ ### Sistema acadêmico simples Orientado a Objetos 
  
  **Objetivos do sistema:** 
  - Cadastrar alunos e professores.
 
- -Informações de alunos:
+ - Informações de alunos:
    - Mostrar a situação do aluno (regular/irregular) de acordo a regularidade do pagamento das mensalidades.
    - Mostrar o total da dívida do aluno.
 
