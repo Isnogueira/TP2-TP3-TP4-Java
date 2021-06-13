@@ -1,6 +1,7 @@
 
 package br.edu.infnet.tp2javasistemaescolar.domain;
 
+
 /**
  *
  * @author IngridNogueira
@@ -8,6 +9,8 @@ package br.edu.infnet.tp2javasistemaescolar.domain;
 public abstract class Pessoa {
     
     private String nome;
+    private String sobrenome;
+    private String ultimoNome;
     private int idade;
     private String email;
     private String ocupacao;
@@ -15,24 +18,37 @@ public abstract class Pessoa {
     public Pessoa() {
     }
 
-    public Pessoa(String nome, int idade) {
+    public Pessoa(String nome, String sobrenome, String ultimoNome, int idade, String email, String ocupacao) {
         this.nome = nome;
+        this.sobrenome = sobrenome;
+        this.ultimoNome = ultimoNome;
         this.idade = idade;
-    }
-
-    public Pessoa(String email, String nome, int idade, String ocupacao) {
-        this(nome, idade);
         this.email = email;
         this.ocupacao = ocupacao;
     }
     
-    public String getNome() {
+    public StringBuilder getNome() {
         
-        return nome;
+        StringBuilder sb = new StringBuilder();
+        
+        sb.append(this.nome);
+        sb.append(this.sobrenome);
+        sb.append(this.ultimoNome);
+        
+        return sb;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setNome(String nome){
+    
+         
+        int posFinal = nome.lastIndexOf(" ");
+        
+        int posInicial = nome.indexOf(" ");
+        
+        this.nome = nome.substring(0, posInicial);
+        this.sobrenome = nome.substring(posInicial, posFinal);
+        this.ultimoNome = nome.substring(posFinal);
+               
     }
 
     public int getIdade() {
@@ -65,6 +81,6 @@ public abstract class Pessoa {
                 + "\nEmail: " + this.getEmail()
                 + "\nOcupação: " + this.getOcupacao()
                 
-                + this.toString());
+                + "\n" + this.toString());
     }
 }

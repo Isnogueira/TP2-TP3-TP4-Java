@@ -2,6 +2,7 @@
 package br.edu.infnet.tp2javasistemaescolar.domain;
 
 import br.edu.infnet.tp2javasistemaescolar.auxiliar.Constante;
+import br.edu.infnet.tp2javasistemaescolar.exceptions.NegativeNumberException;
 /**
  *
  * @author IngridNogueira
@@ -26,8 +27,8 @@ public class Aluno extends Pessoa{
         this.mesesInadimplencia = mesesInadimplencia;
     }
 
-    public Aluno(String curso, int periodo, String situacao, float mensalidade, int mesesInadimplencia, String string, int i) {
-        super(string, i);
+    public Aluno(String curso, int periodo, String situacao, float mensalidade, int mesesInadimplencia, String nome, String sobrenome, String ultimoNome, int idade, String email, String ocupacao) {
+        super(nome, sobrenome, ultimoNome, idade, email, ocupacao);
         this.curso = curso;
         this.periodo = periodo;
         this.situacao = situacao;
@@ -35,16 +36,6 @@ public class Aluno extends Pessoa{
         this.mesesInadimplencia = mesesInadimplencia;
     }
 
-    public Aluno(String curso, int periodo, String situacao, float mensalidade, int mesesInadimplencia, String string, String string1, int i, String string2) {
-        super(string, string1, i, string2);
-        this.curso = curso;
-        this.periodo = periodo;
-        this.situacao = situacao;
-        this.mensalidade = mensalidade;
-        this.mesesInadimplencia = mesesInadimplencia;
-    }
-
-   
     
     public String getCurso() {
         return curso;
@@ -74,15 +65,21 @@ public class Aluno extends Pessoa{
         return mensalidade;
     }
 
-    public void setMensalidade(float mensalidade) {
+    public void setMensalidade(float mensalidade) throws NegativeNumberException {
+        if (mensalidade < 0){
+            throw new NegativeNumberException("Valor negativo");
+        }
         this.mensalidade = mensalidade;
     }
 
-    public int getMesesInadimplencia() {
+    public int getMesesInadimplencia () {
         return mesesInadimplencia;
     }
 
-    public void setMesesInadimplencia(int mesesInadimplencia) {
+    public void setMesesInadimplencia(int mesesInadimplencia) throws NegativeNumberException {
+        if (mesesInadimplencia < 0){
+            throw new NegativeNumberException("Valor negativo");
+        }
         this.mesesInadimplencia = mesesInadimplencia;
     }
     
