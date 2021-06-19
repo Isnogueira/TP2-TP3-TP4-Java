@@ -12,4 +12,6 @@
  - Informações de professores
    - Calcular o Salário do professor horista e acrescentar bonus se possuir pós graduação.
 
+- Acrescentei relatórios de professores e alunos através de leitura e arquivos.
+
 **Versão Java:** 16
