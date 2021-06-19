@@ -51,11 +51,8 @@ public class Professor extends Pessoa{
         return posGraduacao;
     }
 
-    public void setPosGraduacao(String posGraduacao) throws InvalidOptionException {
-        if (posGraduacao != "s" || posGraduacao != "S" || posGraduacao != "N" || posGraduacao != 
-                "n"){
-            throw new InvalidOptionException("Opcão inválida!");
-        }
+    public void setPosGraduacao(String posGraduacao){
+       
         this.posGraduacao = posGraduacao;
     }
 
@@ -92,11 +89,11 @@ public class Professor extends Pessoa{
         this.diasTrabalhados = diasTrababalhados;
     }
    
-    private String calcularPosGradução(){
+    public String calcularPosGradução(){
         return "S".equalsIgnoreCase(this.getPosGraduacao()) ? "Sim" : "Não";
     }
     
-    private float calcularSalario(){
+    public float calcularSalario(){
         String temPos = calcularPosGradução();
         
         return "Sim".equals(temPos) ? 
@@ -106,7 +103,7 @@ public class Professor extends Pessoa{
     
     @Override
     public String toString() {
-        return String.format("\nDisciplina: %s\nFez pós graduação? %s\nSalário bruto mensal: R$%.2f", 
+        return String.format("Disciplina: %s\nFez pós graduação? %s\nSalário bruto mensal: R$%.2f", 
                 this.getDisciplina(), 
                 this.calcularPosGradução(),
                 this.calcularSalario());

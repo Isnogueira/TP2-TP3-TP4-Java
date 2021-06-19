@@ -11,7 +11,6 @@ public class Aluno extends Pessoa{
     
     private String curso;
     private int periodo;
-    private String situacao;
     private float mensalidade;
     private int mesesInadimplencia;
     
@@ -19,10 +18,9 @@ public class Aluno extends Pessoa{
         this.setOcupacao("Aluno");
     }
 
-    public Aluno(String curso, int periodo, String situacao, float mensalidade, int mesesInadimplencia) {
+    public Aluno(String curso, int periodo, float mensalidade, int mesesInadimplencia) {
         this.curso = curso;
         this.periodo = periodo;
-        this.situacao = situacao;
         this.mensalidade = mensalidade;
         this.mesesInadimplencia = mesesInadimplencia;
     }
@@ -31,7 +29,6 @@ public class Aluno extends Pessoa{
         super(nome, sobrenome, ultimoNome, idade, email, ocupacao);
         this.curso = curso;
         this.periodo = periodo;
-        this.situacao = situacao;
         this.mensalidade = mensalidade;
         this.mesesInadimplencia = mesesInadimplencia;
     }
@@ -53,14 +50,6 @@ public class Aluno extends Pessoa{
         this.periodo = periodo;
     } 
 
-    public String getSituacao() {
-        return situacao;
-    }
-
-    public void setSituacao(String situacao) {
-        this.situacao = situacao;
-    }
-    
      public float getMensalidade() {
         return mensalidade;
     }
@@ -83,21 +72,15 @@ public class Aluno extends Pessoa{
         this.mesesInadimplencia = mesesInadimplencia;
     }
     
-    private String calcularSituacao() {
-        return mesesInadimplencia > 0 ? "Irregular" : "Regular";                       
-    }
-    
-    private float calcularInadimplencia(){
-        String situacao = calcularSituacao();
-        return "Regular".equals(situacao)? 0 : (this.getMensalidade() * this.getMesesInadimplencia()) + (Constante.PORC_MULTA * getMesesInadimplencia());
+    public float calcularInadimplencia(){
+        return (this.getMensalidade() * this.getMesesInadimplencia()) + (Constante.PORC_MULTA * getMesesInadimplencia());
     }
     
     @Override
     public String toString() {
-        return String.format("Curso: %s\nPeríodo: %d\nSituação: %s\nMeses de inandimplência: %d\nTotal da dívida: R$%.2f",
+        return String.format("Curso: %s\nPeríodo: %s\nMeses de inandimplência: %d\nTotal da dívida: R$%.2f",
                 this.getCurso(),                     
                 this.getPeriodo(),
-                this.calcularSituacao(),
                 this.getMesesInadimplencia(),
                 this.calcularInadimplencia()); 
     }

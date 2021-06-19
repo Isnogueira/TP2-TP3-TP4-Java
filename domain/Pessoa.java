@@ -1,6 +1,8 @@
 
 package br.edu.infnet.tp2javasistemaescolar.domain;
 
+import br.edu.infnet.tp2javasistemaescolar.exceptions.IncompleteNameException;
+
 
 /**
  *
@@ -28,26 +30,27 @@ public abstract class Pessoa {
     }
     
     public StringBuilder getNome() {
-        
+         
         StringBuilder sb = new StringBuilder();
         
         sb.append(this.nome);
+        sb.append(" ");
         sb.append(this.sobrenome);
+        sb.append(" ");
         sb.append(this.ultimoNome);
         
         return sb;
     }
 
-    public void setNome(String nome){
+    public void setNome(String nome) {
     
-         
         int posFinal = nome.lastIndexOf(" ");
-        
+
         int posInicial = nome.indexOf(" ");
-        
+
         this.nome = nome.substring(0, posInicial);
-        this.sobrenome = nome.substring(posInicial, posFinal);
-        this.ultimoNome = nome.substring(posFinal);
+        this.sobrenome = nome.substring(posInicial, posFinal).trim();
+        this.ultimoNome = nome.substring(posFinal).trim();
                
     }
 
@@ -80,7 +83,6 @@ public abstract class Pessoa {
                 + "\nIdade: " + this.getIdade()
                 + "\nEmail: " + this.getEmail()
                 + "\nOcupação: " + this.getOcupacao()
-                
                 + "\n" + this.toString());
     }
 }

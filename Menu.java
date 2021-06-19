@@ -6,9 +6,6 @@ import br.edu.infnet.tp2javasistemaescolar.domain.*;
 import br.edu.infnet.tp2javasistemaescolar.auxiliar.Constante;
 import br.edu.infnet.tp2javasistemaescolar.exceptions.NegativeNumberException;
 import br.edu.infnet.tp2javasistemaescolar.exceptions.FullStorageException;
-import br.edu.infnet.tp2javasistemaescolar.exceptions.InvalidOptionException;
-
-
 
 /**
  *
@@ -92,7 +89,7 @@ public class Menu {
                                 try {
                                         Professor professor = new Professor();
                                         System.out.println("Informe o nome completo do professor: ");
-                                        professor.setNome(ler().nextLine());
+                                        professor.setNome(ler().nextLine().trim());
                                         System.out.println("Informe a idade: ");
                                         professor.setIdade(ler().nextInt());
                                         System.out.println("Informe o email do professor: ");
@@ -117,7 +114,7 @@ public class Menu {
                                             throw new FullStorageException("Armazenamento cheio!"); 
                                         }
 
-                                    } catch (NegativeNumberException | FullStorageException | InvalidOptionException e) {
+                                    } catch (NegativeNumberException | FullStorageException e) {
                                         System.out.println(e.getMessage());
                                     }
                             } finally {
@@ -142,10 +139,8 @@ public class Menu {
                             int idx = ler().nextInt();
 
                             if (idx >= 0 && idx < index){
-
                                 
                                 pessoas[idx].imprimir();
-                               
                             }
                             else{
                                 System.out.println("Posição inválida");
@@ -172,6 +167,7 @@ public class Menu {
         for (int i = 0; i < index; i++) {
            
             System.out.println(i+"-"+pessoas[i].getNome());
+            
         }
             
     }
